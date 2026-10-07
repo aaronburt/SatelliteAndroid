@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "uk.co.aaronburt.satellite.feature.dashboard"
+    namespace = "uk.co.aaronburt.satellite.feature.entities"
     compileSdk = 37
 
     defaultConfig {
@@ -39,12 +39,8 @@ kotlin {
 }
 
 dependencies {
-    implementation(project(":core:common"))
     implementation(project(":core:model"))
-    implementation(project(":core:datastore"))
-    implementation(project(":core:mqtt"))
     implementation(project(":core:discovery"))
-    implementation(project(":core:reporter"))
     implementation(project(":core:telemetry"))
     implementation(project(":core:designsystem"))
 
@@ -61,10 +57,4 @@ dependencies {
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
-
-    androidTestImplementation(platform(libs.compose.bom))
-    androidTestImplementation(libs.compose.ui.test.junit4)
-    androidTestImplementation(libs.androidx.test.ext.junit)
-    androidTestImplementation(libs.androidx.test.runner)
-    debugImplementation(libs.compose.ui.test.manifest)
 }
